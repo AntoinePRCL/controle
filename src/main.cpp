@@ -8,6 +8,7 @@ prev->next = n_cell;
 }
 
 void suppr(Reel* cell) {
+Reel* del_cell = cell->next;
 cell->next = cell->next->next;
 delete [] cell->next;
 }
@@ -67,6 +68,23 @@ switch(choix){
 	break;
 	case 2:
 	print(head);
+	break;
+	case 3:
+	int del_value;
+	cout<<"Entrez une valeur a supprimer : ";
+	cin>>del_value;
+	select = head;
+	if (select->value =del_value) {
+		head = select->next;
+		delete [] select;
+	}
+	while ((select->next)) {
+		if(select->next->value = del_value) {
+			suppr(select);
+		}
+		select=select->next;
+		break;
+	}
 	break;
 	}
 } while (choix != 5);
