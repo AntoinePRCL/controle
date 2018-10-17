@@ -1,10 +1,12 @@
 #include "Reel.h"
 
 Reel::Reel(){
-	prev = NULL;
-	next = NULL;
+	next = nullptr;
 }
 
-Reel::Reel(float n_value) {
+Reel::Reel(Reel* n_next, float n_value) {
 	value = n_value;
+	next = n_next;
 }
+
+Reel::~Reel() {}
